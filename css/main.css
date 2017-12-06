@@ -1,4 +1,3 @@
-
 /***
 IMAGE ATTRIBUTION:
 
@@ -10,64 +9,81 @@ Fahim Akhter - https://500px.com/fahimakhter
 
 ***/
 
-html {
-    background: whitesmoke;
-}
-
+html,
 body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     line-height: 1.5;
     height: 100%;
+    background: whitesmoke;
 }
 
 .wrapper {
     box-sizing: border-box;
     margin: 50px 45px 0px 75px;
-    height:100%;
-    height:500px;
+    height: 100%;
+    height: 500px;
 }
 
-footer{
-    position: absolute;
-    background:red;
-    height:100px;
-    width:100px;
+footer {
+    font-family: 'Rubik', Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+    color: darkgrey;
+    text-align: center;
+    padding-top:50px;
+    padding-bottom:20px;
 }
+
 h1 {
-    font-family: 'Barlow Semi Condensed', Helvetica, Arial, sans-serif;
-    font-weight: 400;
+    font-family: 'Rubik', Helvetica, Arial, sans-serif;
+    font-weight: 200;
     font-size: 2.5rem;
-    position: absolute;
-    bottom: 10px;
-    margin-bottom: 0;
-    color: whitesmoke;
-
+    color: black;
+    margin: 0;
 }
 
-h2{
-    font-family: 'Barlow Semi Condensed', Helvetica, Arial, sans-serif;
-    font-weight:400;
-    font-size:1.2rem;
-    display:inline;
-    padding-left:10px;
+h2 {
+    font-family: 'Rubik', Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+    color: darkgrey;
+    margin: 0;
 }
 
 header {
-    box-sizing: border-box;
-    position: relative;
-    height: 150px;
-    background: linear-gradient(to right, #1565c0, #003c8f);
-    width: 100%;
-    padding: 0px 75px 0px 75px;
-    box-shadow: 0px 10px 003c8f;
+    background: white;
+    line-height: 1.75;
+    box-shadow: 2px 0px 5px lightgrey;
+    padding-top: 50px;
+    padding-left: 75px;
+    padding-right: 75px;
+    padding-bottom: 30px;
 }
 
-.gallery-img{
-    position: relative;
-    width:90%;
+.img-container {
+    position:relative;
+    width: 90%;
+    box-shadow: 0 1px 2px grey;
+    border-radius: 2px;
+    box-sizing: border-box;
+    transition: transform 0.15s ease;
+    overflow: hidden;
 }
+
+/*gradient overlay
+.img-container:hover::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 74%, rgba(0, 0, 0, 0.8) 100%);
+}
+*/
+
 
 ul {
     list-style: none;
@@ -78,80 +94,88 @@ ul {
 
 li {
     float: left;
+    width:25%;
 }
 
-.gallery-img .label{
-    opacity:0;
-    bottom:4%;
+.label {
     position: absolute;
     margin:0;
+    bottom:0;
+    width:100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
+    padding:8px 0 8px 0;
     text-align: center;
-    padding:5px;
-    border-radius: 5px;
+    color: white;
+    font-family: 'Rubik', Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    font-size: 0.7em;
     text-shadow: 1px 1px black;
-    color:white;
     z-index: 1;
-    font-family:'Barlow Semi Condensed', Helvetica, Arial, sans-serif;
-    font-size: 0.9em;
-    transition: opacity 0.15s ease;
-    background: rgba(0,0,0,0.7);
+    transition: all 0.25s ease;
+    transform: translateY(100%);
+    opacity: 0;
 }
 
-.gallery-img:hover .label{
-    opacity:1;
-    cursor:default;
+
+.img-container:hover .label{
+    opacity: 1;
+    transform: translateY(0);
 }
 
-.gallery-img img {
+.image {
     width: 100%;
-    transition: transform 0.15s ease;
-    border-radius: 5px;
-    box-shadow: 0 1px 2px grey;
-    box-sizing: border-box;
-    filter: grayscale(100%);
+    height:auto;
+    display: block;
+    transition: transform 0.3s ease-out;
 }
 
-.gallery-img img:hover {
+.img-container:hover{
     transform: scale(1.1);
-    border-radius: 5px;
-    box-shadow: 0 5px 18px grey;
-    z-index: 999;
-    overflow: hidden;
-    filter: grayscale(0%);
+}
+
+.img-container:hover .image{
+    transform: scale(1.1);
 }
 
 
 @media screen and (max-width: 499px) {
     li {
-        width: 100%;
+        width:100%;
         margin-bottom: 20px;
-    }
-    header {
-        padding: 0px;
-        height:100px;
-    }
-    h1 {
-        text-align: center;
-        width: 100%;
     }
     .wrapper {
         margin: 50px 20px 0px 20px;
         width: 100%;
     }
-    h1{
-        font-size:2em;
+    h1 {
+        font-size: 2em;
+        font-weight: 300;
+        text-align: center;
     }
-    .gallery-img .label{
-        opacity:1;
-        left:2%;
-        bottom:5%;
+    h2 {
+        text-align: center;
     }
-    .gallery-img img{
-        filter:grayscale(0%);
+    header {
+        padding: 40px 40px 30px 40px;
     }
-    .gallery-img:hover img{
+    .label {
+        opacity: 1;
+        transition: none;
         transform: none;
-        box-shadow: 0 1px 2px grey; 
+        font-size:1em;
+    }
+    
+    .img-container:hover{
+        transform: none;
+    }
+
+    .img-container:hover .image{
+        transform: none;
+    }
+    
+    footer{
+        padding-top:50px;
+        padding-bottom:20px;
     }
 }
 
@@ -160,23 +184,23 @@ li {
         width: 50%;
         margin-bottom: 20px;
     }
-    header {
-        padding-left: 50px;
-    }
     .wrapper {
         margin: 50px 25px 0px 50px;
     }
-    
+    .label{
+        font-size:0.8em;
+    }
 }
 
 @media screen and (min-width: 900px) {
     li {
         width: 25%;
-    }
-    header {
-        padding: 0px 75px 0px 75px;
+        margin-bottom: 20px;
     }
     .wrapper {
         margin: 50px 45px 0px 75px;
+    }
+    .label{
+        font-size:0.7em;
     }
 }
