@@ -26,27 +26,17 @@ body {
     height: 500px;
 }
 
-footer {
-    font-family: 'Rubik', Helvetica, Arial, sans-serif;
-    font-weight: 300;
-    font-size: 1rem;
-    color: darkgrey;
-    text-align: center;
-    padding-top:50px;
-    padding-bottom:20px;
-}
-
 h1 {
     font-family: 'Rubik', Helvetica, Arial, sans-serif;
     font-weight: 200;
-    font-size: 2.5rem;
+    font-size: 2.6rem;
     color: black;
     margin: 0;
 }
 
 h2 {
     font-family: 'Rubik', Helvetica, Arial, sans-serif;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 1rem;
     color: darkgrey;
     margin: 0;
@@ -56,10 +46,7 @@ header {
     background: white;
     line-height: 1.75;
     box-shadow: 2px 0px 5px lightgrey;
-    padding-top: 50px;
-    padding-left: 75px;
-    padding-right: 75px;
-    padding-bottom: 30px;
+    padding: 50px 75px 30px 75px;
 }
 
 .img-container {
@@ -190,6 +177,9 @@ li {
     .label{
         font-size:0.8em;
     }
+    header{
+        padding: 50px 40px 30px 50px;
+    }
 }
 
 @media screen and (min-width: 900px) {
@@ -202,5 +192,8 @@ li {
     }
     .label{
         font-size:0.7em;
+    }
+    header{
+        padding: 50px 75px 30px 75px;
     }
 }
