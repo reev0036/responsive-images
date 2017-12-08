@@ -1,4 +1,5 @@
 /***
+Assignment Requirement:
 IMAGE ATTRIBUTION:
 
 Markus Spiske - https://500px.com/markusspiske
@@ -51,26 +52,13 @@ header {
 
 .img-container {
     position:relative;
-    width: 90%;
+    max-width: 90%; /*Assignment requirement*/
     box-shadow: 0 1px 2px grey;
     border-radius: 2px;
     box-sizing: border-box;
-    transition: transform 0.15s ease;
+    transition: transform 0.15s ease; /*Assignment requirement*/
     overflow: hidden;
 }
-
-/*gradient overlay
-.img-container:hover::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 74%, rgba(0, 0, 0, 0.8) 100%);
-}
-*/
-
 
 ul {
     list-style: none;
@@ -98,34 +86,34 @@ li {
     font-size: 0.7em;
     text-shadow: 1px 1px black;
     z-index: 1;
-    transition: all 0.25s ease;
-    transform: translateY(100%);
+    transition: all 0.25s ease; 
+    transform: translateY(100%); 
     opacity: 0;
 }
 
-
 .img-container:hover .label{
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0); 
 }
 
 .image {
     width: 100%;
     height:auto;
     display: block;
-    transition: transform 0.3s ease-out;
+    transition: transform 0.3s ease-out; /*Assignment requirement*/
 }
 
 .img-container:hover{
-    transform: scale(1.1);
+    transform: scale(1.1); /*Assignment requirement*/
 }
 
 .img-container:hover .image{
-    transform: scale(1.1);
+    transform: scale(1.1); /*Assignment requirement*/
 }
 
+/* Phone Screen Media Query */
 
-@media screen and (max-width: 499px) {
+@media screen and (max-width: 600px) {
     li {
         width:100%;
         margin-bottom: 20px;
@@ -151,11 +139,9 @@ li {
         transform: none;
         font-size:1em;
     }
-    
     .img-container:hover{
         transform: none;
     }
-
     .img-container:hover .image{
         transform: none;
     }
@@ -166,7 +152,9 @@ li {
     }
 }
 
-@media screen and (min-width: 500px) {
+/* Tablet/Low-res Screen Media Query */
+
+@media screen and (min-width: 601px) and (max-width: 1199px) {
     li {
         width: 50%;
         margin-bottom: 20px;
@@ -174,15 +162,31 @@ li {
     .wrapper {
         margin: 50px 25px 0px 50px;
     }
-    .label{
-        font-size:0.8em;
+    .label {
+        opacity: 1;
+        transition: none;
+        transform: none;
+        font-size:1em;
+    }
+    .img-container:hover{
+        transform: none;
+    }
+    .img-container:hover .image{
+        transform: none;
+    }
+    
+    footer{
+        padding-top:50px;
+        padding-bottom:20px;
     }
     header{
         padding: 50px 40px 30px 50px;
     }
 }
 
-@media screen and (min-width: 900px) {
+/* Desktop Screen Media Query */
+
+@media screen and (min-width: 1200px) {
     li {
         width: 25%;
         margin-bottom: 20px;
